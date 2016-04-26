@@ -1,5 +1,15 @@
 <div class="container">
   <div class="row">
+    <div class="col-sm-6">
+      <%= form_for(:search, method: "get", url: search_path) do |f| %>
+        <%= f.label :name, "Search by name" %>
+        <%= f.text_field :name %>
+
+        <%= f.submit "search" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-sm-12">
       <h1><%= @items.count %> Items</h1>
     </div>
@@ -15,4 +25,3 @@
     </div>
   <% end %>
 </div>
-

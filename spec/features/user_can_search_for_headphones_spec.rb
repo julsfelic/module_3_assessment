@@ -6,7 +6,7 @@ RSpec.feature "User can search for headphones" do
       VCR.use_cassette("user_search_headphones") do
         visit root_path
 
-        fill_in "search", with: "sennheiser"
+        fill_in "search_name", with: "sennheiser"
         click_on "search"
 
         expect(current_path).to eq("/search")
