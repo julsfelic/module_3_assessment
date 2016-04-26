@@ -7,12 +7,12 @@ class Headphone
               :image_url
 
   def initialize(data)
-    @sku = data[:sku]
-    @name = data[:name]
+    @sku                 = data[:sku]
+    @name                = data[:name]
     @customer_avg_review = data[:customerReviewAverage]
-    @short_description = data[:shortDescription]
-    @sale_price = data[:salePrice]
-    @image_url = data[:image]
+    @short_description   = data[:shortDescription]
+    @sale_price          = data[:salePrice]
+    @image_url           = data[:image]
   end
 
   def self.find_by(params)

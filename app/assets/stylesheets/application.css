@@ -23,8 +23,13 @@
 }
 
 .results li {
+  border: 1px solid #000;
   clear: both;
   list-style: none;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .results aside {
