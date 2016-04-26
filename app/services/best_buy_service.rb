@@ -8,8 +8,8 @@ class BestBuyService
 
   def headphones(params)
     if params[:name].split(" ").count > 1
-binding.pry
-      parse(connection.get("/v1/products(longDescription=* headphones* white*)"))
+      long_description = params[:name].split
+      parse(connection.get("/v1/products(longDescription=#{long_description[0]}*%20#{long_description[1]}*%20#{long_description[2]}*)"))
     else
       parse(connection.get("/v1/products((search=#{params[:name]})&(categoryPath.id=abcat0204000))"))
     end
