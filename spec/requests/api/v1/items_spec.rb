@@ -25,3 +25,21 @@ RSpec.describe "GET /api/v1/items" do
     ])
   end
 end
+
+RSpec.describe "POST /api/v1/items" do
+  it "creates an item in the database" do
+    post "/api/v1/items?name=juls&description=dope&image_url=fluff.png"
+
+    json_created_item = JSON.parse(response.body)
+
+    expect(response.status).to eq 201
+
+    item = Item.first
+
+    expect(json_created_item).to eq({
+      "name" => item.name,
+      "description" => item.description,
+      "image_url" => item.image_url
+    })
+  end
+end

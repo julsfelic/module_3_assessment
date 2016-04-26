@@ -10,9 +10,19 @@ module Api
           respond_with Item.find(params[:id])
         end
 
+        def create
+          respond_with Item.create!(item_params)
+        end
+
         def destroy
           respond_with Item.find(params[:id]).destroy
         end
+
+        private
+
+          def item_params
+            params.permit(:name, :description, :image_url)
+          end
       end
     end
   end
