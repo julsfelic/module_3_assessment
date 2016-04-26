@@ -7,7 +7,12 @@ class BestBuyService
   end
 
   def headphones(params)
-    parse(connection.get("/v1/products((search=#{params[:name]})&(categoryPath.id=abcat0204000))"))
+    if params[:name].split(" ").count > 1
+binding.pry
+      parse(connection.get("/v1/products(longDescription=* headphones* white*)"))
+    else
+      parse(connection.get("/v1/products((search=#{params[:name]})&(categoryPath.id=abcat0204000))"))
+    end
   end
 
   private

@@ -17,7 +17,7 @@ class Headphone
 
   def self.find_by(params)
     service = BestBuyService.new
-    headphones = service.headphones(name: params[:name])
+    headphones = service.headphones(params)
     headphones[:products].map do |headphone|
       new(headphone)
     end
