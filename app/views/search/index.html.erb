@@ -2,15 +2,21 @@
   <h1>Search Results</h1>
 
   <ul class="results">
-    <% @headphones.each do |headphone| %>
-      <li>
-        <h3>Sku: <%= headphone.sku %></h3>
-        <h3>Name: <%= headphone.name %></h3>
-        <h3>Customer Average Review: <%= headphone.customer_avg_review %></h3>
-        <h3>Short Description: <%= headphone.short_description %></h3>
-        <h3>Sale Price: <%= headphone.sale_price %></h3>
-        <%= image_tag headphone.image_url, alt: "headphones" %>
-      </li>
+    <% if @headphones.length == 0 %>
+      <h3>No search results were found</h3>
+    <% else %>
+      <% @headphones.each do |headphone| %>
+        <li>
+          <%= image_tag headphone.image_url, alt: "headphones" %>
+          <aside>
+            <h3>Sku: <%= headphone.sku %></h3>
+            <h3>Name: <%= headphone.name %></h3>
+            <h3>Customer Average Review: <%= headphone.customer_avg_review %></h3>
+            <h3>Short Description: <%= headphone.short_description %></h3>
+            <h3>Sale Price: <%= headphone.sale_price %></h3>
+          </aside>
+        </li>
+      <% end %>
     <% end %>
   </ul>
 </section>

@@ -14,5 +14,24 @@
  */
 
 .results img {
+  float: left;
   width: 200px;
+}
+
+.results {
+  padding-left: 0;
+}
+
+.results li {
+  clear: both;
+  list-style: none;
+}
+
+.results aside {
+  margin-left: 270px;
+}
+
+.results li h3 {
+  font-size: 2rem;
+  margin-top: 10px;
 }
