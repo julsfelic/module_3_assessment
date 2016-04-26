@@ -9,6 +9,10 @@ module Api
         def show
           respond_with Item.find(params[:id])
         end
+
+        def destroy
+          respond_with Item.find(params[:id]).destroy
+        end
       end
     end
   end
