@@ -11,7 +11,7 @@ RSpec.feature "User can search for headphones" do
 
         expect(current_path).to eq("/search")
 
-        results = all('li')
+        results = all('.results li')
 
         expect(results.length).to eq 15
         expect(results[0]).to have_content("2602352")
